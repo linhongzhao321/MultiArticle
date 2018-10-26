@@ -1,0 +1,20 @@
+{
+    "name": "funco/multi-article",
+    "description": "Multi site article publishing tool",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "funco",
+            "email": "linhongzhao321@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "EFrame\\MultiArticle\\": "src",
+            "EFrame\\MultiArticle\\Publisher\\Lx\\": "src/Publisher/Lx"
+        }
+    },
+    "require": {
+        "lexiangla/openapi": "dev-master"
+    }
+}
