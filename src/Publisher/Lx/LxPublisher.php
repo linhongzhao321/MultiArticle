@@ -8,23 +8,24 @@
 
 namespace EFrame\MultiArticle\Publisher\Lx;
 
+use EFrame\MultiArticle\Article\ArticleInterface;
+use EFrame\MultiArticle\Publisher\Config;
 use EFrame\MultiArticle\Publisher\Publisher;
-use Lexiangla\Openapi\Api;
 
-abstract class LxPublisher extends Api
+abstract class LxPublisher extends Publisher
 {
-    use Publisher;
+    use Api;
 
     /**
      * LxPublisher constructor.
      *
-     * @param $appKey
-     * @param $appSecret
+     * @param ArticleInterface|null $article
+     * @param Config|null           $configs
      * @throws \EFrame\MultiArticle\Exception\MultiArticleException
      */
-    public function __construct($appKey, $appSecret)
+    public function __construct(ArticleInterface $article = null, Config $configs = null)
     {
-        parent::__construct($appKey, $appSecret);
+        parent::__construct($article, $configs);
 
         $this->initConfigDefine();
         $this->initStaffIdOption();
@@ -43,7 +44,7 @@ abstract class LxPublisher extends Api
             'reship_url'     => $this->getConfig('reshipUrl'),
         ];
         $response = $this->postDoc($this->getConfig('staffId'), $attributes, $options);
-        echo \GuzzleHttp\json_encode($response);exit;
+        return $response;
     }
 
 //    /**

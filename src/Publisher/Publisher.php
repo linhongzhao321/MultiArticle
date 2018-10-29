@@ -16,7 +16,7 @@ use EFrame\MultiArticle\Article\ArticleInterface;
  *
  * @package EFrame\MultiArticle\Publisher
  */
-trait Publisher
+abstract class Publisher
 {
     use Config;
 
