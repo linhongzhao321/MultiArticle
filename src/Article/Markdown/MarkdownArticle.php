@@ -26,6 +26,7 @@ class MarkdownArticle implements ArticleInterface
     protected $authorGroup = '';
     protected $intro = '';
     protected $cover = '';
+    protected $keys = [];
 
     public function getTitle(): string
     {
@@ -64,7 +65,7 @@ class MarkdownArticle implements ArticleInterface
 
     public function setTitle(string $title)
     {
-        $this->title = $title;
+        $this->title = trim($title);
     }
 
     /**
@@ -137,17 +138,17 @@ class MarkdownArticle implements ArticleInterface
 
     public function getKeys(): array
     {
-        // TODO: Implement getKeys() method.
+        return $this->keys;
     }
 
     public function setKeys(array $keys)
     {
-        // TODO: Implement setKeys() method.
+        $this->keys = $keys;
     }
 
     public function addKey(string $key)
     {
-        // TODO: Implement addKey() method.
+        $this->keys[] = $key;
     }
 
 }

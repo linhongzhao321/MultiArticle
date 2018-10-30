@@ -25,9 +25,9 @@ abstract class LxPublisher extends Publisher
      */
     public function __construct(ArticleInterface $article = null, Config $configs = null)
     {
+        $this->initConfigDefine();
         parent::__construct($article, $configs);
 
-        $this->initConfigDefine();
         $this->initStaffIdOption();
     }
 
@@ -43,8 +43,9 @@ abstract class LxPublisher extends Publisher
             'source'         => $this->getConfig('source'),
             'reship_url'     => $this->getConfig('reshipUrl'),
         ];
-        $response = $this->postDoc($this->getConfig('staffId'), $attributes, $options);
-        return $response;
+        /*$response = */
+        $this->postDoc($this->getConfig('staffId'), $attributes, $options);
+//        return $response;
     }
 
 //    /**

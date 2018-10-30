@@ -11,7 +11,8 @@
     "autoload": {
         "psr-4": {
             "EFrame\\MultiArticle\\": "src",
-            "EFrame\\MultiArticle\\Publisher\\Lx\\": "src/Publisher/Lx"
+            "EFrame\\MultiArticle\\Publisher\\Lx\\": "src/Publisher/Lx",
+            "EFrame\\MultiArticle\\Publisher\\Github\\": "src/Publisher/Github"
         }
     },
     "require": {
