@@ -14,34 +14,34 @@ use EFrame\MultiArticle\Publisher\Publisher;
 
 abstract class GithubPublisher extends Publisher
 {
-    const PROJECT_GIT_HUB_URL = 'https://github.com/linhongzhao321/linhongzhao321.github.io.git';// git hub url
-    const PROJECT_LOCAL_DIR = '/Users/funco/BlogProject/linhongzhao321.github.io';// 本地路径
+    // todo 使用前请重新定义覆盖这两个const
+    const PROJECT_GIT_HUB_URL = '';// git hub url
+    const PROJECT_LOCAL_DIR = '';// 本地路径
 
     /**
      * GihubPublisher constructor.
      *
      * @param ArticleInterface|null $article
      * @param Config|null           $configs
-     * @throws \EFrame\MultiArticle\Exception\MultiArticleException
      */
     public function __construct(ArticleInterface $article = null, Config $configs = null)
     {
-        $this->initConfigDefine();
+//        $this->initConfigDefine();
         parent::__construct($article, $configs);
     }
 
 
-    /**
-     * @throws \EFrame\MultiArticle\Exception\MultiArticleException
-     */
-    protected function initConfigDefine()
-    {
-        $this->setConfigDefine([
-            'publishDir' => [ // 发布路径
-                'name'    => '发布路径',// 任意名称，仅作展示用途
-                'key'     => 'publishDir',// 配置项对应key
-                'type'    => PUBLISHER_CONFIG_TYPE_TXT | PUBLISHER_CONFIG_VALUE_SINGLE,// 配置项输入类型字符
-            ],
-        ]);
-    }
+//    /**
+//     * @throws \EFrame\MultiArticle\Exception\MultiArticleException
+//     */
+//    protected function initConfigDefine()
+//    {
+//        $this->setConfigDefine([
+//            'publishDir' => [ // 发布路径
+//                'name'    => '发布路径',// 任意名称，仅作展示用途
+//                'key'     => 'publishDir',// 配置项对应key
+//                'type'    => PUBLISHER_CONFIG_TYPE_TXT | PUBLISHER_CONFIG_VALUE_SINGLE,// 配置项输入类型字符
+//            ],
+//        ]);
+//    }
 }
